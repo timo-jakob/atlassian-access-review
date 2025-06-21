@@ -1,1 +1,2 @@
 # Required external packages
+atlassian-python-api==4.0.4
