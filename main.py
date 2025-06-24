@@ -66,8 +66,11 @@ def get_all_jira_projects():
                     
                     print(f"{project_name}, project lead: {project_lead}")
                     
-            except Exception as e:
-                print(f"Error connecting to {instance}: {str(e)}")
+            except requests.exceptions.RequestException as e:
+                print(f"Connection error with {instance}: {str(e)}")
+                continue
+            except JiraError as e:
+                print(f"Jira API error with {instance}: {str(e)}")
                 continue
                 
     except Exception as e:
