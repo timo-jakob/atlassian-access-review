@@ -31,8 +31,8 @@ def get_all_jira_projects():
         
         for instance in credentials['instances']:
             jira_url = f"https://{instance}.atlassian.net"
-            print(f"\n{instance}")
-            print("-" * len(instance))
+            logging.info(f"\n{instance}")
+            logging.info("-" * len(instance))
             
             try:
                 # Connect to Jira instance
